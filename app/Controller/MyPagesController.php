@@ -13,51 +13,63 @@ class MyPagesController extends AppController
 	
 	public function MyPage()
 	{
-		$user_id = $this->request->named['id'];
+		$user_id = $this->Auth->user('id'); 
 	
-		if( ($this->MyPage->findById( $user_id )) == NULL )
+		if( ($this->MyPage->findByUserId( $user_id )) == NULL )
 		{
 			return $this->redirect( array( 'action' => 'add' ) );
 		}
-	
-		/*if( !$id )
-		{
-			$this->MyPage->create();
-			
-			//throw new NotFoundException( __('Invalid data id') );
-		}*/
+		if( ($this->MyPage->findByrole()) )
 		
-		$data = $this->MyPage->findById( $id );
+		$data = $this->MyPage->find( 'all' );
 		
 		if( !data )
 		{
 			throw new NotFoundException( __('Invalid data') );
 		}
-		$this->set( 'data' , $data );
-	
-		//$datas = $this->MyPage->find( 'all' );
-		//$this->set( 'datas' , $datas );
+		//debug($this->MyPage->find('all'));
+		$this->set( 'mypages' , $this->MyPage->find('all') );
+		
 	}
 	
 	public function add()
 	{
-		
-		$user_id = $this->Session->read( 'user.Auth.id' );
+		if ($this->request->is('post')) {
+        $this->request->data['MyPage']['user_id'] = $this->Auth->user('id'); //Added this line
+        if ($this->MyPage->save($this->request->data)) {
+            $this->Session->setFlash(__('Your post has been saved.'));
+            $this->redirect(array('action' => 'MyPage'));
+        }
+    }
+		/*$user_id = $this->Session->read( 'user.Auth.id' );
         $this->MyPage->create();
-		$this->request->data = array( 'id' => $user_id );
-		if($this->MyPage->save($this->request->data))
+		$this->request->data = array( 'user_id' => $user_id );
+		if( $this->MyPage->save($this->request->data) )
 		{
 			$this->Session->setFlash(__('プロフィールを作成しました。'));
 			return $this->redirect(array('action' => 'MyPage'));
 		}
 		$this->Session->setFlash(__('空欄の個所を入力してください。'));
-        
+        */
 	}
 	
-	public function edit()
+	public function edit( $id = null )
 	{
-		if( $this->request->is('data') )
+		
+		if( !$id )
 		{
+			throw new NotFoundException( __('Invalid post') );
+		}
+		
+		$mypage = $this->MyPage->findById( $id );
+		if( !$mypage )
+		{
+			throw new NotFoundException( __('Invalid data') );
+		}
+		
+		if( $this->request->is('post' , 'put' ) )
+		{
+			$this->MyPage->id = $id;
 			if( $this->MyPage->save($this->request->data) )
 			{
 				$this->Session->setFlash( __('プロフィールを変更しました。') );
@@ -65,13 +77,8 @@ class MyPagesController extends AppController
 			}
 			$this->Session->setFlash( __('プロフィールの編集が中断されました。') );
 		}
-	}
-	
-	private function upload( $uploaddir )
-	{
-	
-		//$uploadfile = $uploaddir.basename( $this->data[][][] )
-	
+		
+		
 	}
 	
 }

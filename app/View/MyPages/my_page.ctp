@@ -14,10 +14,11 @@
 -->
 
 <h1>MyPage</h1>
-<?php echo $this->Html->link(
-    'プロフィールを編集する',
-    array('controller' => 'MyPages', 'action' => 'edit')
+
+<?php echo $this->Html->link( 'プロフィールを編集する' ,
+    array('controller' => 'MyPages', 'action' => 'edit' , $mypages['0']['MyPage']['id']) 
 ); ?>
+
 <table>
     <tr>
         <th>comments</th>
@@ -25,17 +26,10 @@
         <th>image</th>
     </tr>
 
-    <!-- ここからmypagedata配列をループし、各種情報を表示 -->
-
-    <?php foreach ($mypagedata as $mypage): ?>
     <tr>
-        <td><?php echo $mypagedata['Post']['id']; ?></td>
-        <td>
-            <?php echo $this->Html->link($mypagedata['Post']['title'],
-array('controller' => 'posts', 'action' => 'view', $mypagedata['Post']['id'])); ?>
-        </td>
-        <td><?php echo $mypagedata['Post']['created']; ?></td>
+        <td><?php echo $mypages['0']['MyPage']['comments']; ?></td>
+        <td><?php echo $mypages['0']['MyPage']['Qualification'] ?></td>
+        <td><?php echo $mypages['0']['MyPage']['image']; ?></td>
     </tr>
-    <?php endforeach; ?>
-    <?php unset($mypagedata); ?>
+    <?php unset($data); ?>
 </table>
