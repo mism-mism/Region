@@ -2,7 +2,7 @@
 <div class="user form">
 	<?php echo $this->Form->create('User'); ?>
 	<fildset>
-		<legend><?php echo __('Add User'); ?></legend>
+		<legend><?php echo __('ユーザー登録'); ?></legend>
 		<?php
 			echo $this->Form->input('username');
 			echo $this->Form->input('password');
@@ -11,5 +11,7 @@
         ));
 		?>
 	</fildset>
-	<?php echo $this->Form->end(__('Submit')); ?>
+	<?php echo $this->Form->input('送信',array('type'=>'submit','class'=>'btn btn-primary','label'=>''));?> 
 </div>
+
+
