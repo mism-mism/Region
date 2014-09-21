@@ -37,15 +37,10 @@ class AppController extends Controller {
 			'loginRedirect' => array('controller' => 'users', 'action' => 'mypage'),
 			'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
 			'authorize' => array('Controller')
-		)	);
-	
-	public $helpers = array(
-		'Session',
-		'Html' => array('className' => 'TwitterBootstrap.BootstrapHtml'),
-		'Form' => array('className' => 'TwitterBootstrap.BootstrapForm'),
-		'Paginator' => array('className' => 'TwitterBootstrap.BootstrapPaginator'),
+		)
 	);
-
+	
+	public function isAuthorized($user) {
     	if (isset($user['role']) && $user['role'] === '0') {
         	return true;
     	}
@@ -58,5 +53,12 @@ class AppController extends Controller {
     	// デフォルトは拒否
     	return false;
 	}
+	public $helpers = array(
+		'Session',
+		'Html' => array('className' => 'TwitterBootstrap.BootstrapHtml'),
+		'Form' => array('className' => 'TwitterBootstrap.BootstrapForm'),
+		'Paginator' => array('className' => 'TwitterBootstrap.BootstrapPaginator'),
+	);
+
 	 // この行を追加
 }
