@@ -9,7 +9,7 @@
 		<div class="pops">
 		<h1>新着メール一覧</h1>
 			<?php foreach ($messages as $mes): ?>
-				<?php echo $this->Html->link(h($mes['Message']['body']), array('action' => 'pop', h($mes['Message']['id']))) ?>
+				<?php echo $this->Html->link(h($mes['Message']['title']), array('action' => 'deteil', h($mes['Message']['id']))) ?>
 				<hr>
 			<?php endforeach ?>	
 		</div>

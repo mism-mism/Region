@@ -6,7 +6,7 @@ class MessagesController extends AppController {
 		'User',
 	);
 
-	public function index() {
+	public function index($id = NULL) {
 		/*$role1 = array(
 			'conditions' => array(
 				'User.role' => '1'
@@ -28,7 +28,7 @@ class MessagesController extends AppController {
 		$pop = $this->Message->find('all',
 			array(
 				'conditions' => array(
-					'Message.source_id' => '10',
+					'Message.source_id' => $id,
 					),
 				'order' => array(
 					'Message.created' => 'DESC'
@@ -39,6 +39,7 @@ class MessagesController extends AppController {
 	}
 
 	public function send($id = NULL) {
+		$this->set("id", $id);
 		if ($this->request->is('post')) {
             if ($this->Message->save($this->request->data)) 
             {
@@ -50,7 +51,14 @@ class MessagesController extends AppController {
         }
 	}
 
-	public function deteil() {
-
+	public function deteil($id = NULL) {
+		$pop = $this->Message->find('first',
+			array(
+				'conditions' => array(
+					'Message.id' => $id
+					)
+				)
+			);
+		$this->set('mes', $pop);
 	}
 }
