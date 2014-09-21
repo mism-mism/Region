@@ -38,3 +38,7 @@ app/tmp/cache/persistent/myapp_cake_core_file_map
 app/tmp/cache/persistent/myapp_cake_core_method_cache
 
 app/tmp/logs/error.log
+
+app/tmp/cache/models/myapp_cake_model_default_hackathon_list
+
+app/tmp/cache/persistent/myapp_cake_core_default_ja
