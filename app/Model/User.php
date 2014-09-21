@@ -7,7 +7,7 @@ class User extends Model {
  	 		),
  	 		'Unique' => array(
  	 			'rule' => array('isUnique'),
- 	 			'message' => 'そのusernameは使われています。'
+ 	 			'message' => 'そのUsernameは使われています。'
  	 		)
  	 	),
  	 	'password' => array(

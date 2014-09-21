@@ -73,23 +73,22 @@ class RequestsController extends AppController{
 		
 		$request_id = $this->request->named['id'];
 		$request_data = $this->Request->findById($request_id);
-			//$this->set('row',$tasks_data);
-
+				
 			if($request_data['Request']['status_flg'] == 0){
 
 				$id = $this->request->named['id'];
 				$this->Request->id = $id;
-				$this->Request->saveField('vender_id',$this->Session->read('User.Auth.id'));
+				$this->Request->saveField('vender_id',$this->Session->read('Auth.User.id'));
 				$this->Request->saveField('status_flg',1);
 				$this->Session->setFlash(
-					__('マッチング申請を行いました.'),
+					__('マッチング申請を行いました.依頼主にどのような提案ができるかメールしましょう！'),
 					'alert',
 					array(
 						'plugin' => 'TwitterBootstrap',
 						'class' => 'alert-info'
 					)
 				);;
-				$this->redirect('/Requests/index');
+				$this->redirect('/Messages/send/'.$request_data['Request']['client_id']);				
 			}
 	}
 	
