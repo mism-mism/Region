@@ -91,5 +91,26 @@ class RequestsController extends AppController{
 				);;
 				$this->redirect('/Requests/index');
 			}
+	}
+	
+	public function detail(){
+	
+		//ユーザー種類判定
+		$user_role = $this->Auth->user('role');
+		if($user_role != 1){
+			$this->Session->setFlash(__('アクセスできません.'),
+					'alert',
+					array(
+						'plugin' => 'TwitterBootstrap',
+						'class' => 'alert-error'
+					)
+			);
+			$this->redirect('/MyPages/index');
 		}
+		
+		$request_id = $this->request->named['id'];
+		$request_data = $this->Request->findById($request_id);
+		$this->set('row',$request_data);
+		
+	}
 }
