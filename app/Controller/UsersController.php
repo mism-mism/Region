@@ -1,13 +1,13 @@
 <?php
 class UsersController extends AppController
 {
-    var $uses=array('User','Post','PostComment');
+    var $uses=array('User');
 
 
 	public function beforeFilter() {
         parent::beforeFilter();
         // ユーザー自身による登録とログアウトを許可する
-       // $this->Auth->allow('add', 'logout');
+       $this->Auth->allow('add', 'logout');
     }
 
 	public function login() {
@@ -31,7 +31,10 @@ class UsersController extends AppController
     }
 
     public function mypage($id = null){
-        //$this->set('userId', $this->Auth->user('id'));    //セッションAUTHのIDのみ取得
+
+        $user_id = $this->Auth->user('username');
+        $this->set('user_id',$user_id);
+    /*    //$this->set('userId', $this->Auth->user('id'));    //セッションAUTHのIDのみ取得
         $this->set('userInfo', $this->Auth->user());
         
         $tweetdata = $this->Post->find('all',array(
@@ -40,6 +43,7 @@ class UsersController extends AppController
         $Commentdata = $this->PostComment->find('all',array(
             'conditions'=>array('user_id' => $this->Auth->user('id') )));
         $this->set('postcomments',$Commentdata);
+        */
     }
 
     public function view($id = null) {
@@ -52,6 +56,9 @@ class UsersController extends AppController
 
     public function add() {
         if ($this->request->is('post')) {
+
+             $this->request->data['User']['password'] = AuthComponent::password($this->request->data['User']['password']);
+
             $this->User->create();
             if ($this->User->save($this->request->data)) {
                 $this->Session->setFlash(__('The user has been saved'));
