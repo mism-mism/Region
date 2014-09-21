@@ -7,7 +7,7 @@
 			echo $this->Form->input('username');
 			echo $this->Form->input('password');
 			echo $this->Form->input('role', array(
-            'options' => array('client' => 'Client', 'vender' => 'Vender', 'owner' => 'Owner')
+            'options' => array('0' => 'Client', '1' => 'Vender', '2' => 'Owner')
         ));
 		?>
 	</fildset>

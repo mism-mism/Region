@@ -31,5 +31,34 @@ App::uses('Controller', 'Controller');
  * @link		http://book.cakephp.org/2.0/en/controllers.html#the-app-controller
  */
 class AppController extends Controller {
-	public $components = array('DebugKit.Toolbar','Session'); // この行を追加
+	public $components = array('DebugKit.Toolbar',
+		'Session',
+		'Auth' => array(
+			'loginRedirect' => array('controller' => 'users', 'action' => 'mypage'),
+			'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
+			'authorize' => array('Controller')
+		)
+	);
+	
+	public function isAuthorized($user) {
+    	if (isset($user['role']) && $user['role'] === '0') {
+        	return true;
+    	}
+    	if (isset($user['role']) && $user['role'] === '1') {
+        	return true;
+    	}
+    	if (isset($user['role']) && $user['role'] === '2') {
+        	return true;
+    	}
+    	// デフォルトは拒否
+    	return false;
+	}
+	public $helpers = array(
+		'Session',
+		'Html' => array('className' => 'TwitterBootstrap.BootstrapHtml'),
+		'Form' => array('className' => 'TwitterBootstrap.BootstrapForm'),
+		'Paginator' => array('className' => 'TwitterBootstrap.BootstrapPaginator'),
+	);
+
+	 // この行を追加
 }

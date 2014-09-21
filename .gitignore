@@ -5,3 +5,8 @@ app/tmp/*
 app/[Cc]onfig/core.php
 app/[Cc]onfig/database.php
 !empty
+app/tmp/cache/persistent/myapp_cake_core_cake_dev_ja
+app/tmp/cache/persistent/myapp_cake_core_cake_dev_ja
+app/tmp/cache/persistent/myapp_cake_core_cake_dev_ja
+
+app/tmp/cache/persistent/myapp_cake_core_cake_dev_ja

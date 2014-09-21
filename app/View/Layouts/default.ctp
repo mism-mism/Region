@@ -62,8 +62,6 @@
 
 	<div class="container">
 
-		<h1>Bootstrap starter template</h1>
-
 		<?php echo $this->Session->flash(); ?>
 
 		<?php echo $this->fetch('content'); ?>
