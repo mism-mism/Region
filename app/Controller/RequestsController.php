@@ -68,4 +68,28 @@ class RequestsController extends AppController{
 		$this->set('rows',$this->paginate('Request'));
 		
 	}
+	
+	public function matching(){
+		
+		$request_id = $this->request->named['id'];
+		$request_data = $this->Request->findById($request_id);
+			//$this->set('row',$tasks_data);
+
+			if($request_data['Request']['status_flg'] == 0){
+
+				$id = $this->request->named['id'];
+				$this->Request->id = $id;
+				$this->Request->saveField('vender_id',$this->Session->read('User.Auth.id'));
+				$this->Request->saveField('status_flg',1);
+				$this->Session->setFlash(
+					__('マッチング申請を行いました.'),
+					'alert',
+					array(
+						'plugin' => 'TwitterBootstrap',
+						'class' => 'alert-info'
+					)
+				);;
+				$this->redirect('/Requests/index');
+			}
+		}
 }
