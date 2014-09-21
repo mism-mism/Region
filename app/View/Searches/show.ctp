@@ -1,0 +1,1 @@
+<a href="<?php echo $this->Html->url(array('controller' => 'messages', 'action' => 'send', 'realestate_article_id' => $data['result']['row_set']['0']['realestate_article_id'],'user_id'=>$this->Session->read['Auth']['User']['id'])) ?>"  class="btn btn-success btn-small"><i class="icon-eye-open icon-white"></i>&nbsp;<?php echo __('内覧依頼') ?></a>
