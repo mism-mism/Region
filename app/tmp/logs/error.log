@@ -1,0 +1,338 @@
+2014-09-21 17:53:17 Error: [MissingHelperException] Helper class AuthHelper could not be found.
+Exception Attributes: array (
+  'class' => 'AuthHelper',
+  'plugin' => false,
+)
+Request URL: /hackathon/messages/send/14
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\View\HelperCollection.php(63): HelperCollection->load('Auth')
+#1 C:\xampp\htdocs\hackathon\lib\Cake\View\View.php(823): HelperCollection->__isset('Auth')
+#2 C:\xampp\htdocs\hackathon\app\View\Messages\send.ctp(17): View->__get('Auth')
+#3 C:\xampp\htdocs\hackathon\lib\Cake\View\View.php(934): include('C:\\xampp\\htdocs...')
+#4 C:\xampp\htdocs\hackathon\lib\Cake\View\View.php(896): View->_evaluate('C:\\xampp\\htdocs...', Array)
+#5 C:\xampp\htdocs\hackathon\lib\Cake\View\View.php(465): View->_render('C:\\xampp\\htdocs...')
+#6 C:\xampp\htdocs\hackathon\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#7 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(192): Controller->render()
+#8 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest), Object(CakeResponse))
+#9 C:\xampp\htdocs\hackathon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-09-21 17:54:29 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'receive_id' cannot be null
+Request URL: /hackathon/messages/send/14
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\hackathon\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO `ha...', Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Model\Datasource\DboSource.php(1004): DboSource->execute('INSERT INTO `ha...')
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Model\Model.php(1832): DboSource->create(Object(AppModel), Array, Array)
+#4 C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php(44): Model->save(Array)
+#5 [internal function]: MessagesController->send('14')
+#6 C:\xampp\htdocs\hackathon\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#7 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest), Object(CakeResponse))
+#9 C:\xampp\htdocs\hackathon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-09-21 17:55:47 Error: Fatal Error (4): syntax error, unexpected 'echo' (T_ECHO) in [C:\xampp\htdocs\hackathon\app\View\Messages\send.ctp, line 17]
+2014-09-21 17:55:47 Error: [FatalErrorException] syntax error, unexpected 'echo' (T_ECHO)
+Request URL: /hackathon/messages/send/14
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 17)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 17, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 17, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 17:56:34 Error: [PDOException] SQLSTATE[23000]: Integrity constraint violation: 1048 Column 'receive_id' cannot be null
+Request URL: /hackathon/messages/send/14
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Model\Datasource\DboSource.php(458): PDOStatement->execute(Array)
+#1 C:\xampp\htdocs\hackathon\lib\Cake\Model\Datasource\DboSource.php(424): DboSource->_execute('INSERT INTO `ha...', Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Model\Datasource\DboSource.php(1004): DboSource->execute('INSERT INTO `ha...')
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Model\Model.php(1832): DboSource->create(Object(AppModel), Array, Array)
+#4 C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php(44): Model->save(Array)
+#5 [internal function]: MessagesController->send('14')
+#6 C:\xampp\htdocs\hackathon\lib\Cake\Controller\Controller.php(490): ReflectionMethod->invokeArgs(Object(MessagesController), Array)
+#7 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(185): Controller->invokeAction(Object(CakeRequest))
+#8 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest), Object(CakeResponse))
+#9 C:\xampp\htdocs\hackathon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#10 {main}
+2014-09-21 17:58:13 Error: [MissingViewException] View file "C:\xampp\htdocs\hackathon\app\View\Users\mypage.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\hackathon\\app\\View\\Users\\mypage.ctp',
+)
+Request URL: /hackathon/users/mypage
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\hackathon\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(192): Controller->render()
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\hackathon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-21 18:05:29 Error: [MissingViewException] View file "C:\xampp\htdocs\hackathon\app\View\Users\mypage.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\hackathon\\app\\View\\Users\\mypage.ctp',
+)
+Request URL: /hackathon/users/mypage
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\hackathon\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(192): Controller->render()
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\hackathon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-21 18:14:41 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php, line 70]
+2014-09-21 18:14:41 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 18:15:03 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php, line 70]
+2014-09-21 18:15:03 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 18:15:17 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php, line 70]
+2014-09-21 18:15:17 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 18:16:21 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php, line 70]
+2014-09-21 18:16:21 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 70, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 18:16:45 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php, line 69]
+2014-09-21 18:16:45 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 69)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 69, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 69, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 18:17:14 Error: Fatal Error (1): Call to a member function find() on a non-object in [C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php, line 66]
+2014-09-21 18:17:14 Error: [FatalErrorException] Call to a member function find() on a non-object
+Request URL: /hackathon/messages/view
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 66)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 66, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\\xampp\\htdocs...', 66, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 18:17:25 Error: [MissingViewException] View file "C:\xampp\htdocs\hackathon\app\View\Messages\view.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\hackathon\\app\\View\\Messages\\view.ctp',
+)
+Request URL: /hackathon/messages/view
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\hackathon\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(192): Controller->render()
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(MessagesController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\hackathon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-21 18:21:13 Error: [MissingViewException] View file "C:\xampp\htdocs\hackathon\app\View\Users\mypage.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\hackathon\\app\\View\\Users\\mypage.ctp',
+)
+Request URL: /hackathon/users/mypage
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\hackathon\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(192): Controller->render()
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\hackathon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-21 18:33:18 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\xampp\htdocs\hackathon\app\View\Messages\index.ctp, line 23]
+2014-09-21 18:33:18 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 23)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 23, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 23, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 18:34:54 Error: Fatal Error (4): syntax error, unexpected ')' in [C:\xampp\htdocs\hackathon\app\View\Messages\index.ctp, line 22]
+2014-09-21 18:34:54 Error: [FatalErrorException] syntax error, unexpected ')'
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 22)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 22, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 22, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 18:54:04 Error: [MissingViewException] View file "C:\xampp\htdocs\hackathon\app\View\Users\mypage.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\hackathon\\app\\View\\Users\\mypage.ctp',
+)
+Request URL: /hackathon/users/mypage
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\hackathon\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(192): Controller->render()
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\hackathon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-21 18:54:44 Error: [MissingViewException] View file "C:\xampp\htdocs\hackathon\app\View\Users\mypage.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\xampp\\htdocs\\hackathon\\app\\View\\Users\\mypage.ctp',
+)
+Request URL: /hackathon/users/mypage
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\View\View.php(462): View->_getViewFileName(NULL)
+#1 C:\xampp\htdocs\hackathon\lib\Cake\Controller\Controller.php(954): View->render(NULL, NULL)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(192): Controller->render()
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Routing\Dispatcher.php(160): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\xampp\htdocs\hackathon\app\webroot\index.php(108): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2014-09-21 18:59:32 Error: Fatal Error (4): syntax error, unexpected '$pop' (T_VARIABLE) in [C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php, line 31]
+2014-09-21 18:59:32 Error: [FatalErrorException] syntax error, unexpected '$pop' (T_VARIABLE)
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 31, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 19:14:59 Error: Fatal Error (4): syntax error, unexpected 'endif' (T_ENDIF) in [C:\xampp\htdocs\hackathon\app\View\Messages\index.ctp, line 21]
+2014-09-21 19:14:59 Error: [FatalErrorException] syntax error, unexpected 'endif' (T_ENDIF)
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 19:15:15 Error: Fatal Error (4): syntax error, unexpected 'endif' (T_ENDIF) in [C:\xampp\htdocs\hackathon\app\View\Messages\index.ctp, line 21]
+2014-09-21 19:15:15 Error: [FatalErrorException] syntax error, unexpected 'endif' (T_ENDIF)
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 21, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 19:16:33 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [C:\xampp\htdocs\hackathon\app\View\Messages\index.ctp, line 28]
+2014-09-21 19:16:33 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 28)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 28, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 28, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 19:18:54 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [C:\xampp\htdocs\hackathon\app\View\Messages\index.ctp, line 28]
+2014-09-21 19:18:54 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 28)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 28, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 28, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 19:23:19 Error: Fatal Error (4): syntax error, unexpected '>' in [C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php, line 13]
+2014-09-21 19:23:19 Error: [FatalErrorException] syntax error, unexpected '>'
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 19:25:08 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php, line 13]
+2014-09-21 19:25:08 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 13, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 19:27:05 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php, line 14]
+2014-09-21 19:27:05 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 14, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 14, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 19:27:14 Error: Fatal Error (4): syntax error, unexpected ';', expecting ')' in [C:\xampp\htdocs\hackathon\app\Controller\MessagesController.php, line 14]
+2014-09-21 19:27:14 Error: [FatalErrorException] syntax error, unexpected ';', expecting ')'
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 14)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 14, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 14, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 19:32:20 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [C:\xampp\htdocs\hackathon\app\View\Messages\index.ctp, line 23]
+2014-09-21 19:32:20 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 23)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 23, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 23, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 19:32:33 Error: Fatal Error (4): syntax error, unexpected 'endforeach' (T_ENDFOREACH) in [C:\xampp\htdocs\hackathon\app\View\Messages\index.ctp, line 23]
+2014-09-21 19:32:33 Error: [FatalErrorException] syntax error, unexpected 'endforeach' (T_ENDFOREACH)
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 23)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 23, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 23, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 19:34:47 Error: Fatal Error (4): syntax error, unexpected 'endif' (T_ENDIF) in [C:\xampp\htdocs\hackathon\app\View\Messages\index.ctp, line 22]
+2014-09-21 19:34:47 Error: [FatalErrorException] syntax error, unexpected 'endif' (T_ENDIF)
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 22)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 22, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 22, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2014-09-21 19:42:00 Error: Fatal Error (4): syntax error, unexpected ')', expecting ']' in [C:\xampp\htdocs\hackathon\app\View\Messages\index.ctp, line 20]
+2014-09-21 19:42:00 Error: [FatalErrorException] syntax error, unexpected ')', expecting ']'
+Request URL: /hackathon/messages
+Stack Trace:
+#0 C:\xampp\htdocs\hackathon\lib\Cake\Error\ErrorHandler.php(203): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 20)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 20, Array)
+#2 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(929): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\\xampp\\htdocs...', 20, Array)
+#3 C:\xampp\htdocs\hackathon\lib\Cake\Core\App.php(902): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
