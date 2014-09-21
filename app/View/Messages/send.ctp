@@ -6,6 +6,10 @@
 </head>
 <body>
 	<div class="wrap">
+	<?php if ($role == 1){ ?> <h1>建築依頼</h1>
+	<?php }elseif ($role == 2){ ?>  <h1>内覧依頼</h1>
+	<?php }else{ ?> <h1>クライアント交流</h1>
+	<?php }; ?>
 		<div class="form">
 			<?php
 				echo $this->Form->create('Message');

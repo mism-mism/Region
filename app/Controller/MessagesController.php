@@ -61,7 +61,20 @@ class MessagesController extends AppController {
 	public function send($id = NULL) {
 		//送り先のID取得
 		$this->set("id", $id);
-		
+
+		$userinfo = $this->User->findById($id);
+
+		if ($userinfo['User']['role'] == 1) {
+			//VenderMessage
+			$this->set('role', 0);
+		} else if ($userinfo['User']['role'] == 2) {
+			//OwnerMessage
+			$this->set('role', 1);
+		} else {
+			//Claiant同士
+			$this->set('role', 2);
+		}
+
 		//メッセージ送信
 		if ($this->request->is('post')) {
             if ($this->Message->save($this->request->data)) 
