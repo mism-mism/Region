@@ -1,4 +1,15 @@
-<?php foreach ($mesView as $mes): ?>
-				<?php echo $this->Html->link(h($mes['Message']['title']), array('action' => 'deteil', h($mes['Message']['id']))) ?>
+<div class="preview">
+	<h1>建築依頼メッセージ</h1>
+	<?php foreach ($Mes['preview'] as $mes): ?>
+		<?php echo $this->Html->link(h($mes['Message']['title']), array('action' => 'deteil', h($mes['Message']['id']))) ?>	
+					<hr>
+	<?php endforeach; ?>	
+</div>
+
+<div class="creat">
+	<h1>建築依頼メッセージ</h1>
+	<?php foreach ($Mes['creat'] as $mes): ?>
+	<?php echo $this->Html->link(h($mes['Message']['title']), array('action' => 'deteil', h($mes['Message']['id']))) ?>	
 				<hr>
-			<?php endforeach ?>	
+<?php endforeach; ?>	
+</div>

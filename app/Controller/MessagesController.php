@@ -7,11 +7,10 @@ class MessagesController extends AppController {
 	);
 
 	public function index($id = NULL) {
-		$this->set('id', $id);
+		//不動産、依頼者、建築者三つに分けて取得
 		$role0 = array(
 			'conditions' => array(
 				'User.role' => '0'
-
 				)
 			);
 		$role1 = array(
@@ -27,9 +26,9 @@ class MessagesController extends AppController {
 		$data['role']['0'] = $this->User->find('all', $role0);
 		$data['role']['1'] = $this->User->find('all', $role1);
 		$data['role']['2'] = $this->User->find('all', $role2);
-		$this->set('users', $data);
 
-		$pop = $this->Message->find('all',
+		//自分あてのメッセージを新着取得
+		/*$pop = $this->Message->find('all',
 			array(
 				'conditions' => array(
 					'Message.receive_id' => $this->Session->read('Auth.User.id'),
@@ -38,12 +37,32 @@ class MessagesController extends AppController {
 					'Message.created' => 'DESC'
 					)
 				)
-			);
+			);*/
+
+		$this->paginate = array(
+				'conditions'=>array(
+					'Message.receive_id' => $this->Session->read('Auth.User.id'),
+					'Message.del_flag'=>'0'
+					),
+
+					// 取得件数の定義
+					'limit'=>'3',
+
+					//取得順の定義
+					'order'=>array('Diary.created'=>'desc')
+				);
+
+		$pop = $this->paginate('Message');
+	
+		$this->set('users', $data);
 		$this->set('messages', $pop);
 	}
 
 	public function send($id = NULL) {
+		//送り先のID取得
 		$this->set("id", $id);
+		
+		//メッセージ送信
 		if ($this->request->is('post')) {
             if ($this->Message->save($this->request->data)) 
             {
@@ -56,6 +75,7 @@ class MessagesController extends AppController {
 	}
 
 	public function deteil($id = NULL) {
+		//洗濯したメッセージの内容取得
 		$pop = $this->Message->find('first',
 			array(
 				'conditions' => array(
@@ -63,17 +83,30 @@ class MessagesController extends AppController {
 					)
 				)
 			);
+
 		$this->set('mes', $pop);
 	}
 
 	public function view() {
-		$ids = $this->Message->find('all',
+		//内覧メッセージと建築メッセージを分けて取得
+		$data['preview'] = $this->Message->find('all',
 			array(
 				'conditions' => array(
-					'Message.receive_id' =>  $this->Session->read('Auth.User.id')
+					'Message.receive_id' =>  $this->Session->read('Auth.User.id'),
+					'Message.role' => '0'
 					)
 				)
 			);
-		$this->set('mesView', $ids);
+
+		$data['creat'] = $this->Message->find('all',
+			array(
+				'conditions' => array(
+					'Message.receive_id' =>  $this->Session->read('Auth.User.id'),
+					'Message.role' => '1'
+					)
+				)
+			);
+
+		$this->set('Mes', $data);
 	}
 }
