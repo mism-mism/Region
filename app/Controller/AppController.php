@@ -38,20 +38,6 @@ class AppController extends Controller {
 			'logoutRedirect' => array('controller' => 'pages', 'action' => 'display', 'home'),
 			'authorize' => array('Controller')
 		)	);
-
-	public function isAuthorized($user) {
-    if (isset($user['role']) && $user['role'] === '0') {
-        return true;
-    }
-    if (isset($user['role']) && $user['role'] === '1') {
-        return true;
-    }
-    if (isset($user['role']) && $user['role'] === '2') {
-        return true;
-    }
-    // デフォルトは拒否
-    return false;
-	}
 	
 	public $helpers = array(
 		'Session',
@@ -60,5 +46,17 @@ class AppController extends Controller {
 		'Paginator' => array('className' => 'TwitterBootstrap.BootstrapPaginator'),
 	);
 
-
+    	if (isset($user['role']) && $user['role'] === '0') {
+        	return true;
+    	}
+    	if (isset($user['role']) && $user['role'] === '1') {
+        	return true;
+    	}
+    	if (isset($user['role']) && $user['role'] === '2') {
+        	return true;
+    	}
+    	// デフォルトは拒否
+    	return false;
+	}
+	 // この行を追加
 }
