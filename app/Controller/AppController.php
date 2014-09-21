@@ -49,11 +49,16 @@ class AppController extends Controller {
     if (isset($user['role']) && $user['role'] === '2') {
         return true;
     }
-
-
     // デフォルトは拒否
     return false;
-}
+	}
+	
+	public $helpers = array(
+		'Session',
+		'Html' => array('className' => 'TwitterBootstrap.BootstrapHtml'),
+		'Form' => array('className' => 'TwitterBootstrap.BootstrapForm'),
+		'Paginator' => array('className' => 'TwitterBootstrap.BootstrapPaginator'),
+	);
 
-	 // この行を追加
+
 }
