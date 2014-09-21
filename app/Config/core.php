@@ -50,7 +50,7 @@
  */
 	Configure::write('Error', array(
 		'handler' => 'ErrorHandler::handleError',
-		'level' => E_ALL & ~E_DEPRECATED & ~E_STRICT,
+		'level' => E_ALL & ~E_DEPRECATED,
 		'trace' => true
 	));
 
@@ -222,12 +222,12 @@
 /**
  * A random string used in security hashing methods.
  */
-	Configure::write('Security.salt', 'DYhG93b0qykkfdaslIxfs2guVoUubWwvniR2G0FgaC9mi');
+	Configure::write('Security.salt', 'DYhG93b0qykdjlafshfIxfs2guVoUubWwvniR2G0FgaC9mi');
 
 /**
  * A random numeric string (digits only) used to encrypt/decrypt strings.
  */
-	Configure::write('Security.cipherSeed', '768593013432441342536453542496749683645');
+	Configure::write('Security.cipherSeed', '7685930965741342536453542496749683645');
 
 /**
  * Apply timestamps with the last modified time to static assets (js, css, images).
