@@ -1,6 +1,6 @@
 <?php
 class MessagesController extends AppController {
-
+	//public $components = array('Session', 'Auth');
 	var $uses = array(
 		'Message',
 		'User',
@@ -28,7 +28,7 @@ class MessagesController extends AppController {
 		$pop = $this->Message->find('all',
 			array(
 				'conditions' => array(
-					'Message.source_id' => $id,
+					'Message.receive_id' => $this->Session->read('Auth.User.id'),
 					),
 				'order' => array(
 					'Message.created' => 'DESC'
