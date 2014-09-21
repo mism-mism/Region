@@ -5,11 +5,11 @@ class DATABASE_CONFIG {
 	 public $default = array(
               'datasource' => 'Database/Mysql',
               'persistent' => false,
-              'host' => 'localhost',
+              'host' => '103.3.189.166',
               'port' => '3306',
-              'login' => 'root',
-              'password' => '',
-              'database' => 'menus',
+              'login' => 'www',
+              'password' => 'cirkit06',
+              'database' => 'hackathon',
               'prefix' => '',
               'encoding' => 'utf8',
          );
