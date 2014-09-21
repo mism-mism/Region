@@ -7,22 +7,27 @@ class MessagesController extends AppController {
 	);
 
 	public function index($id = NULL) {
-		/*$role1 = array(
+		$role0 = array(
 			'conditions' => array(
-				'User.role' => '1'
+				'User.role' => '0',
+				'User.id' => $this->Session->read('Auth.User.id')
 				)
 			);
-		$role2 = array(
+		$role1 = array(
 			'conditions' => array(
-				'User.role' => '2'
+				'User.role' => '1',
+				'User.id' => $this->Session->read('Auth.User.id')
 				)
 			);	
-		$role3 = array(
+		$role2 = array(
 			'conditions' => array(
-				'User.role' => '3'
+				'User.role' => '2',
+				'User.id' => $this->Session->read('Auth.User.id')
 				)
-			);*/
-		$data = $this->User->find('all');
+			);
+		$data['role']['0'] = $this->User->find('all', $role0);
+		$data['role']['1'] = $this->User->find('all', $role1);
+		$data['role']['2'] = $this->User->find('all', $role2);
 		$this->set('users', $data);
 
 		$pop = $this->Message->find('all',
@@ -60,5 +65,16 @@ class MessagesController extends AppController {
 				)
 			);
 		$this->set('mes', $pop);
+	}
+
+	public function view() {
+		$ids = $this->Message->find('all',
+			array(
+				'conditions' => array(
+					'Message.receive_id' =>  $this->Session->read('Auth.User.id')
+					)
+				)
+			);
+		$this->set('mesView', $ids);
 	}
 }

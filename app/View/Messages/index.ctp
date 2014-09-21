@@ -16,10 +16,20 @@
 
 		<div class="view">
 			<div class="0">
-				<h1>不動産</h1>
+			<?php foreach ($users['role']['0'] as $user): ?>
+				<?php echo $this->Html->link(h($user['User']['username']),array('action'=>'send', h($user['User']['id'])))?>
+			<?php endforeach ?>	
+			<?php foreach ($users['role']['1'] as $user): ?>
+				<?php echo $this->Html->link(h($user['User']['username']),array('action'=>'send', h($user['User']['id'])))?>
+			<?php endforeach ?>	
+			<?php foreach ($users['role']['2'] as $user): ?>
+				<?php echo $this->Html->link(h($user['User']['username']),array('action'=>'send', h($user['User']['id'])))?>
+			<?php endforeach;/*<h1>不動産</h1>
 				<?php foreach ($users as $user): ?>
 					<?php if ($user['User']['role'] == 0): ?>
+						
 					<?php echo $this->Html->link(h($user['User']['username']),array('action'=>'send', h($user['User']['id']))) ?>
+						<?php endif; ?>
 					<?php endif; ?>
 				<?php endforeach; ?>	
 			</div>
@@ -38,8 +48,7 @@
 				<?php foreach ($users as $user): ?>
 					<?php if ($user['User']['role'] == 2): ?>
 					<?php echo $this->Html->link(h($user['User']['username']),array('action'=>'send', h($user['User']['id'])))?>
-					<?php endif; ?>
-				<?php endforeach; ?>
+					<?php endif; ?> ?>
 			</div>
 		</div>
 	</div>
