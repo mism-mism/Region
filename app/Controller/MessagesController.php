@@ -1,28 +1,27 @@
 <?php
 class MessagesController extends AppController {
-
+	//public $components = array('Session', 'Auth');
 	var $uses = array(
 		'Message',
 		'User',
 	);
 
 	public function index($id = NULL) {
+		$this->set('id', $id);
 		$role0 = array(
 			'conditions' => array(
-				'User.role' => '0',
-				'User.id' => $this->Session->read('Auth.User.id')
+				'User.role' => '0'
+
 				)
 			);
 		$role1 = array(
 			'conditions' => array(
-				'User.role' => '1',
-				'User.id' => $this->Session->read('Auth.User.id')
+				'User.role' => '1'
 				)
 			);	
 		$role2 = array(
 			'conditions' => array(
-				'User.role' => '2',
-				'User.id' => $this->Session->read('Auth.User.id')
+				'User.role' => '2'
 				)
 			);
 		$data['role']['0'] = $this->User->find('all', $role0);
@@ -33,7 +32,7 @@ class MessagesController extends AppController {
 		$pop = $this->Message->find('all',
 			array(
 				'conditions' => array(
-					'Message.source_id' => $id,
+					'Message.receive_id' => $this->Session->read('Auth.User.id'),
 					),
 				'order' => array(
 					'Message.created' => 'DESC'
