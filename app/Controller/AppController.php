@@ -40,20 +40,17 @@ class AppController extends Controller {
 		)	);
 
 	public function isAuthorized($user) {
-    if (isset($user['role']) && $user['role'] === '0') {
-        return true;
-    }
-    if (isset($user['role']) && $user['role'] === '1') {
-        return true;
-    }
-    if (isset($user['role']) && $user['role'] === '2') {
-        return true;
-    }
-
-
-    // デフォルトは拒否
-    return false;
-}
-
+    	if (isset($user['role']) && $user['role'] === '0') {
+        	return true;
+    	}
+    	if (isset($user['role']) && $user['role'] === '1') {
+        	return true;
+    	}
+    	if (isset($user['role']) && $user['role'] === '2') {
+        	return true;
+    	}
+    	// デフォルトは拒否
+    	return false;
+	}
 	 // この行を追加
 }
