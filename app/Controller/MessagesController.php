@@ -60,8 +60,10 @@ class MessagesController extends AppController {
 
 	public function send($id = NULL ,$name=null) {
 		
-		$realestate_article_id = $this->request->named['realestate_article_id'];
-		$this->set('test', $realestate_article_id);
+		if (!empty($this->request->named['realestate_article_id'])) {
+			$realestate_article_id = $this->request->named['realestate_article_id'];
+			$this->set('test', $realestate_article_id);
+		}
 		//物件IDが送られれば物件情報取得
 		/*if (!empty($this->request->named['realestate_article_id'])) {
 			$realestate_article_id = $this->request->named['realestate_article_id'];
