@@ -33,7 +33,7 @@ class MyPagesController extends AppController
 		//アクセスしたユーザーが建築家でなかったら、「サイトのトップページ」へジャンプ
 		//未実装
 		if( $this->Auth->user('role') != 1 )
-			return $this->redirect( array( 'controller'=>'serches','action'=>'index') );
+			return $this->redirect( array( 'controller'=>'Searches','action'=>'index') );
 		
 		//データベースからプロフィール情報を取得
 		$data = $this->MyPage->find( 'all' );
