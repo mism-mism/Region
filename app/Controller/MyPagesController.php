@@ -8,18 +8,23 @@ class MyPagesController extends AppController
 	
 	public function index()
 	{
-		$this->set( 'datas' , $this->MyPage->find('all') );
+		
 	}
 	
 	public function MyPage()
 	{
-		$user_id = $this->Auth->user('id'); 
+		$user_id = $this->Auth->user('id');
+		$time = date( 's' ) % 6;
 	
 		if( ($this->MyPage->findByUserId( $user_id )) == NULL )
 		{
 			return $this->redirect( array( 'action' => 'add' ) );
 		}
-		if( ($this->MyPage->findByrole()) )
+		
+		if( $this->Auth->user('role') != 1 )
+		{
+			return $this->redirect( array( 'action' => 'index' ) );
+		}
 		
 		$data = $this->MyPage->find( 'all' );
 		
@@ -27,6 +32,17 @@ class MyPagesController extends AppController
 		{
 			throw new NotFoundException( __('Invalid data') );
 		}
+		
+		switch( $time )
+		{
+			case 0: $this->set( 'imgfilename' , 'Boy.bmp' ); break;
+			case 1: $this->set( 'imgfilename' , 'Foy.jpg' ); break;
+			case 2: $this->set( 'imgfilename' , 'Kawagoe.jpg' ); break;
+			case 3: $this->set( 'imgfilename' , 'Oliveoil.jpg' ); break;
+			case 4: $this->set( 'imgfilename' , 'Pelsona.jpg' ); break;
+			case 5: $this->set( 'imgfilename' , 'Superphenomenon.jpg' ); break;
+		}
+		
 		//debug($this->MyPage->find('all'));
 		$this->set( 'mypages' , $this->MyPage->find('all') );
 		
