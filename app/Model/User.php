@@ -7,13 +7,13 @@ class User extends Model {
  	 		),
  	 		'Unique' => array(
  	 			'rule' => array('isUnique'),
- 	 			'message' => 'そのUsernameは使われています。'
+ 	 			'message' => 'そのユーザー名は使われています。'
  	 		)
  	 	),
  	 	'password' => array(
  	 		'notempty' => array(
  	 			'rule' => array('notempty'),
- 	 		),
+ 	 			),
  	 	),
 	);
 }

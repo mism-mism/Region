@@ -4,10 +4,10 @@
 	<fildset>
 		<legend><?php echo __('ユーザー登録'); ?></legend>
 		<?php
-			echo $this->Form->input('username');
-			echo $this->Form->input('password');
-			echo $this->Form->input('role', array(
-            'options' => array('0' => 'Client', '1' => 'Vender', '2' => 'Owner')
+			echo $this->Form->input('username', array('label' => 'ユーザー名'));
+			echo $this->Form->input('password', array('label' => 'パスワード'));
+			echo $this->Form->input('role', array('label' => 'ユーザー種別',
+            'options' => array('0' => '依頼者', '1' => '建築家', '2' => 'オーナー')
         ));
 		?>
 	</fildset>
