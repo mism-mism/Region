@@ -6,10 +6,25 @@
 </head>
 <body>
 	<div class="wrap">
-	<?php if ($role == 1){ ?> <h1>建築依頼</h1>
-	<?php }elseif ($role == 2){ ?>  <h1>内覧依頼</h1>
-	<?php }else{ ?> <h1>クライアント交流</h1>
-	<?php }; ?>
+		<!--依頼によって表示を変える-->	
+		<?php if ($role == 1){ ?>
+		 	<h1>建築依頼</h1>
+		 	<p>
+				この物件をデザインしませんか？
+				<?php echo $this->Html->link('物件情報', array('controller' => 'searches', 'action' => 'show', 'id' => $test)) ?>
+			</p>
+		<?php }elseif ($role == 2){ ?>
+			<h1>内覧依頼</h1>
+			<p>
+				この物件を内覧させて下さい
+				<?php echo $this->Html->link('物件情報', array('controller' => 'searches', 'action' => 'show', 'id' => $test)) ?>
+			</p>
+		<?php }else{ ?> 
+			<h1>クライアント交流</h1>
+		<?php }; ?>
+		
+
+
 		<div class="form">
 			<?php
 				echo $this->Form->create('Message');
