@@ -58,21 +58,44 @@ class MessagesController extends AppController {
 		$this->set('messages', $pop);
 	}
 
-	public function send($id = NULL) {
-		//送り先のID取得
-		$this->set("id", $id);
-		$article_id = $this->request->named['realestate_article_id'];
-		$this->set("article_id", $article_id);
+	public function send($id = NULL ,$name=null) {
+		
+		$realestate_article_id = $this->request->named['realestate_article_id'];
+		$this->set('test', $realestate_article_id);
+		//物件IDが送られれば物件情報取得
+		/*if (!empty($this->request->named['realestate_article_id'])) {
+			$realestate_article_id = $this->request->named['realestate_article_id'];
+			$co=array('realestate_article_id'=>$realestate_article_id);
+			$bultukenInfo = $this->requestAction(
+			array('controller' => 'Searches', 'action' => 'room'),
+				$co
+			 	);
+				$this->set('test2',$bultukenInfo);
+			$data = $realestate_article_id;
+			foreach($bultukenInfo['result']['row_set'] as $d) {
+				if ($d['realestate_article_id'] == $data){
+					$aaa = $d;	
+				} $aaa = $d;
+				
+			}
+		} else {
+			$article_id = NULL;
+		}*/
 
-		$userinfo = $this->User->findById($id);
-		//$articleinfo = $this->->findById($article_id);
+		//宛先のユーザ情報取得
+		$users['receive'] = $this->User->findById($id);
+		
+		//送り主のユーザ情報取得
+		$users['source'] = $this->User->findById($this->Session->read('Auth.User.id'));
 
-		//$aa = $this->setAction("/Searhes/room/");
+		//送受信者のユーザ情報セット
+		$this->set('users', $users);
 
-		if ($userinfo['User']['role'] == 1) {
+		//内覧以来か建築依頼の判定
+		if ($users['receive']['User']['role'] == 1 || $users['source']['User']['role'] == 1) {
 			//VenderMessage
 			$this->set('role', 0);
-		} else if ($userinfo['User']['role'] == 2) {
+		} else if ($users['receive']['User']['role'] == 2 || $users['source']['User']['role'] == 2) {
 			//OwnerMessage
 			$this->set('role', 1);
 		} else {
