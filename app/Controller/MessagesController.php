@@ -61,8 +61,13 @@ class MessagesController extends AppController {
 	public function send($id = NULL) {
 		//送り先のID取得
 		$this->set("id", $id);
+		$article_id = $this->request->named['realestate_article_id'];
+		$this->set("article_id", $article_id);
 
 		$userinfo = $this->User->findById($id);
+		//$articleinfo = $this->->findById($article_id);
+
+		//$aa = $this->setAction("/Searhes/room/");
 
 		if ($userinfo['User']['role'] == 1) {
 			//VenderMessage
