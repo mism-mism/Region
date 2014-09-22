@@ -38,7 +38,7 @@ class MessagesController extends AppController {
 					)
 				)
 			);*/
-
+/*
 		$this->paginate = array(
 				'conditions'=>array(
 					'Message.receive_id' => $this->Session->read('Auth.User.id'),
@@ -51,11 +51,18 @@ class MessagesController extends AppController {
 					//取得順の定義
 					'order'=>array('Diary.created'=>'desc')
 				);
-
-		$pop = $this->paginate('Message');
+		$smtp　= $this->find('all',
+			'conditions' => array(
+				'Message.source_id' => $this->Session->read('Auth.User.id'),
+				'Message.del_flag'=>'0'
+				),
+			'order' => array('Diary.created' => 'desc');
+			);
+		$pop = $this->paginate('Message');*/
 	
 		$this->set('users', $data);
-		$this->set('messages', $pop);
+		//$this->set('pop', $pop);
+		//$this->set('smtp', $smtp);
 	}
 
 	public function send($id = NULL ,$name=null) {
@@ -110,7 +117,7 @@ class MessagesController extends AppController {
             if ($this->Message->save($this->request->data)) 
             {
                 $this->Session->setFlash(__('成功!!'));
-                $this->redirect(array('action' => 'index'));
+                $this->redirect(array('action' => 'view'));
             } else {
                 $this->Session->setFlash(__('失敗!!'));
             }

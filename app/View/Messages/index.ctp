@@ -7,13 +7,20 @@
 <body>
 	<div class="wrap">
 		<div class="pops">
-		<h1>新着メール一覧</h1>
-			<?php foreach ($messages as $mes): ?>
+		<h1>新着メッセージ一覧</h1>
+			<?php foreach ($pop as $mes): ?>
 				<?php echo $this->Html->link(h($mes['Message']['title']), array('action' => 'deteil', h($mes['Message']['id']))) ?>
 				<hr>
 			<?php endforeach ?>	
 		</div>
 
+		<h2>送信メッセージ一覧</h2>
+			<?php foreach ($smtp as $mes): ?>
+				<?php echo $this->Html->link(h($mes['Message']['title']), array('action' => 'deteil', h($mes['Message']['id']))) ?>
+				<hr>
+			<?php endforeach ?>	
+
+		<!--
 		<div class="view">
 			<div class="0">
 				<h1>0</h1>
@@ -40,8 +47,9 @@
 					<?php endif; ?>
 				<?php endforeach; ?>
 			</div>
-			
-			</div>
+		</div>
+		-->
+
 		</div>
 	</div>
 </body>
