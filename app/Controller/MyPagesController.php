@@ -16,7 +16,7 @@ class MyPagesController extends AppController
 	/*---------- エラー回避用ページのメソッド(HelloWorldが表示される) ----------*/
 	public function index()
 	{
-		
+		$this->redirect(array('controller'=>'Searches'));
 	}
 	
 	
@@ -28,19 +28,19 @@ class MyPagesController extends AppController
 	
 		//ユーザーのプロフィール情報が存在しなかったら、プロフィール登録ページへジャンプ
 		if( ($this->MyPage->findByUserId( $user_id )) == NULL )
-			return $this->redirect( array( 'action' => 'add' ) );
+			$this->redirect( array( 'action' => 'add' ) );
 		
 		//アクセスしたユーザーが建築家でなかったら、「サイトのトップページ」へジャンプ
 		//未実装
 		if( $this->Auth->user('role') != 1 )
-			return $this->redirect( array( 'controller'=>'Searches','action'=>'index') );
+			$this->redirect( array( 'action'=>'show',$id=42) );
 		
 		//データベースからプロフィール情報を取得
-		$data = $this->MyPage->find( 'all' );
+		$data = $this->MyPage->findByUserId( $user_id );
 		
 		//データベースから値を取得できなかったらエラーを投げる
-		if( !data )
-			throw new NotFoundException( __('Invalid data') );
+		// if( !empty($data) )
+		// 	throw new NotFoundException( __('Invalid data') );
 		
 		//表示するダミーのプロフィール画像を、乱数値から選択し、viewへセット
 		switch( $time )
@@ -55,10 +55,15 @@ class MyPagesController extends AppController
 		
 		// debug($this->MyPage->find('all'));	デバッグ用
 		//各種情報を表示するため、viewに値をセット
-		$this->set( 'mypages' , $this->MyPage->find('all') );
+		$this->set( 'mypages' , $data);
 		
 	}
 	
+	public function show($id=null){
+		$data = $this->MyPage->findByUserId( $id );
+		$this->set( 'imgfilename' , 'Superphenomenon.jpg' );
+		$this->set( 'mypages' , $data);
+	}
 	
 	/*--------------------- プロフィールの初期登録画面 ---------------------*/
 	public function add()
