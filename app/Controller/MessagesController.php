@@ -117,7 +117,7 @@ class MessagesController extends AppController {
             if ($this->Message->save($this->request->data)) 
             {
                 $this->Session->setFlash(__('成功!!'));
-                $this->redirect(array('action' => 'view'));
+                $this->redirect(array('controller' => 'Searches', 'action' => 'index'));
             } else {
                 $this->Session->setFlash(__('失敗!!'));
             }

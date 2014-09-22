@@ -7,12 +7,12 @@
 <body>
 	<div class="wrap">
 		<!--依頼によって表示を変える-->	
-		<?php if ($role == 1){ ?>
+		<!--<?php if ($role == 2){ ?>
 		 	<h1>建築依頼</h1>
-		 	<!--<p>
+		 	<p>
 				この物件をデザインしませんか？
 				<?php echo $this->Html->link('物件情報', array('controller' => 'searches', 'action' => 'show', 'id' => $test)) ?>
-			</p>-->
+			</p>
 		<?php }elseif ($role == 0){ ?>
 			<h1>内覧依頼</h1>
 			<?php if (!empty('test')): ?>
@@ -24,6 +24,7 @@
 		<?php }else{ ?> 
 			<h1>クライアント交流</h1>
 		<?php }; ?>
+		-->
 		
 
 
