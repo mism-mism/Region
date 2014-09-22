@@ -68,4 +68,48 @@ class RequestsController extends AppController{
 		$this->set('rows',$this->paginate('Request'));
 		
 	}
+	
+	public function matching(){
+		
+		$request_id = $this->request->named['id'];
+		$request_data = $this->Request->findById($request_id);
+				
+			if($request_data['Request']['status_flg'] == 0){
+
+				$id = $this->request->named['id'];
+				$this->Request->id = $id;
+				$this->Request->saveField('vender_id',$this->Session->read('Auth.User.id'));
+				$this->Request->saveField('status_flg',1);
+				$this->Session->setFlash(
+					__('マッチング申請を行いました.依頼主にどのような提案ができるかメールしましょう！'),
+					'alert',
+					array(
+						'plugin' => 'TwitterBootstrap',
+						'class' => 'alert-info'
+					)
+				);;
+				$this->redirect('/Messages/send/'.$request_data['Request']['client_id']);				
+			}
+	}
+	
+	public function detail(){
+	
+		//ユーザー種類判定
+		$user_role = $this->Auth->user('role');
+		if($user_role != 1){
+			$this->Session->setFlash(__('アクセスできません.'),
+					'alert',
+					array(
+						'plugin' => 'TwitterBootstrap',
+						'class' => 'alert-error'
+					)
+			);
+			$this->redirect('/MyPages/index');
+		}
+		
+		$request_id = $this->request->named['id'];
+		$request_data = $this->Request->findById($request_id);
+		$this->set('row',$request_data);
+		
+	}
 }
