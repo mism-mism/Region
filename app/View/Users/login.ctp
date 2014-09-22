@@ -4,8 +4,9 @@
     <fieldset>
         <legend><?php echo __('ログイン'); ?></legend>
         <?php
-        echo $this->Form->input('ユーザー名');
-        echo $this->Form->input('パスワード');
+        echo $this->Form->input('username', array('placeholder' => 'Username', 'label' => 'ユーザー名'));
+
+        echo $this->Form->input('password', array('placeholder' => 'Password','label' => 'パスワード'));
     	?>
     </fieldset>
 	<?php echo $this->Form->input('ログイン',array('type'=>'submit','class'=>'btn btn-primary','label'=>''));?> 

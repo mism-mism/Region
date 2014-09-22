@@ -34,6 +34,7 @@ class UsersController extends AppController
 
         $user_id = $this->Auth->user('username');
         $this->set('user_id',$user_id);
+        $this->redirect(array('controller' => 'searches' ));
     /*    //$this->set('userId', $this->Auth->user('id'));    //セッションAUTHのIDのみ取得
         $this->set('userInfo', $this->Auth->user());
         
