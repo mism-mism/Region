@@ -4,7 +4,7 @@ App::import('Vendor', 'Request');
 
 class SearchesController extends AppController{
 	public $helpers = array('js');
-   public function index(){
+	public function index(){
     	$res=null;
     	$num=1;
     	$con=array('city_id'=>'17206');
@@ -23,7 +23,7 @@ class SearchesController extends AppController{
   
 
 
-  		$this->set('data',$res);
+  		$this->set('data',$res["result"]["row_set"]["0"]);
   		$this->set('data1',$con);
 	}
 
