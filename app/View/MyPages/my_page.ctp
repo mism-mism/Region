@@ -1,24 +1,13 @@
-﻿<!-- 
-<html>
-	<head>
-	<head/>
-	
-	<body>
-		<h1><?php echo 'MyPage'; ?></h1>
-		<br/>
-		<h2>Hello World!!<h2>
-		<br/>
-		<br/>
-	<body/>
-<html/>
--->
-
-<h1>MyPage</h1>
-
+﻿<h1>MyPage</h1>
+</br>
 <?php echo $this->Html->link( 'プロフィールを編集する' ,
     array('controller' => 'MyPages', 'action' => 'edit' , $mypages['0']['MyPage']['id']) 
 ); ?>
-
+</br>
+<?php echo $this->Html->link( '戻る' ,
+    array( 'controller' => 'Searches', 'action' => 'index' ) 
+); ?>
+</br>
 <table>
     <tr>
         <th>自己紹介文</th>

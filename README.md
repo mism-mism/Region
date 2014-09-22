@@ -1,5 +1,3 @@
-TEST
-CakePHP
 =======
 
 [![CakePHP](http://cakephp.org/img/cake-logo.png)](http://www.cakephp.org)
@@ -32,6 +30,8 @@ Get Support!
 ------------
 
 [#cakephp](http://webchat.freenode.net/?channels=#cakephp) on irc.freenode.net - Come chat with us, we have cake
+
+[getbootstrap](http://getbootstrap.com) on bootstrap  - free css design framework
 
 [Google Group](https://groups.google.com/group/cake-php) - Community mailing list and forum
 
