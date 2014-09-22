@@ -4,6 +4,10 @@
     array('controller' => 'MyPages', 'action' => 'edit' , $mypages['0']['MyPage']['id']) 
 ); ?>
 </br>
+<?php echo $this->Html->link( '戻る' ,
+    array( 'controller' => 'Searches', 'action' => 'index' ) 
+); ?>
+</br>
 <table>
     <tr>
         <th>自己紹介文</th>
