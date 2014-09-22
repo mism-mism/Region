@@ -13,7 +13,7 @@
 				この物件をデザインしませんか？
 				<?php echo $this->Html->link('物件情報', array('controller' => 'searches', 'action' => 'show', 'id' => $test)) ?>
 			</p>-->
-		<?php }elseif ($role == 2){ ?>
+		<?php }elseif ($role == 0){ ?>
 			<h1>内覧依頼</h1>
 			<?php if (!empty('test')): ?>
 				<p>

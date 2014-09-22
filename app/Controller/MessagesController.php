@@ -101,10 +101,10 @@ class MessagesController extends AppController {
 		$this->set('users', $users);
 
 		//内覧以来か建築依頼の判定
-		if ($users['receive']['User']['role'] == 1 || $users['source']['User']['role'] == 1) {
+		if ($users['receive']['User']['role'] == 1 /*&& $users['source']['User']['role'] == 1*/) {
 			//VenderMessage
 			$this->set('role', 0);
-		} else if ($users['receive']['User']['role'] == 2 || $users['source']['User']['role'] == 2) {
+		} else if ($users['receive']['User']['role'] == 2 /*&& $users['source']['User']['role'] == 2*/) {
 			//OwnerMessage
 			$this->set('role', 1);
 		} else {
