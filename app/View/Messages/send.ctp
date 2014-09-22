@@ -9,16 +9,18 @@
 		<!--依頼によって表示を変える-->	
 		<?php if ($role == 1){ ?>
 		 	<h1>建築依頼</h1>
-		 	<p>
+		 	<!--<p>
 				この物件をデザインしませんか？
 				<?php echo $this->Html->link('物件情報', array('controller' => 'searches', 'action' => 'show', 'id' => $test)) ?>
-			</p>
+			</p>-->
 		<?php }elseif ($role == 2){ ?>
 			<h1>内覧依頼</h1>
-			<p>
-				この物件を内覧させて下さい
-				<?php echo $this->Html->link('物件情報', array('controller' => 'searches', 'action' => 'show', 'id' => $test)) ?>
-			</p>
+			<?php if (!empty('test')): ?>
+				<p>
+					この物件を内覧させて下さい
+					<?php echo $this->Html->link('物件情報', array('controller' => 'searches', 'action' => 'show', 'id' => 'test')) ?>
+				</p>
+			<?php endif; ?>
 		<?php }else{ ?> 
 			<h1>クライアント交流</h1>
 		<?php }; ?>
@@ -32,7 +34,9 @@
 				echo $this->Form->input('body',array('label'=>'本文','id'=>'summernote','rows'=>'18','class'=>'input-block-level','required' => false));
 			?>
 		<?php echo $this->Form->hidden('source_id',array('value' => $this->Session->read('Auth.User.id'))); ?>
-		<?php echo $this->Form->hidden('receive_id',array('value' => $id)); ?>
+		<?php if (!empty($id)): ?>
+			<?php echo $this->Form->hidden('receive_id',array('value' => $id)); ?>
+		<?php endif; ?>
 		<?php echo $this->Form->hidden('role',
 		array('value' => $role)); ?>
 		<?php echo $this->Form->input('送信',array('type'=>'submit','class'=>'btn btn-primary','label'=>''));?>

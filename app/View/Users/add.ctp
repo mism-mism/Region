@@ -2,7 +2,7 @@
 <div class="user form">
 	<?php echo $this->Form->create('User'); ?>
 	<fildset>
-		<legend><?php echo __('ユーザー登録'; ?></legend>
+		<legend><?php echo __('ユーザー登録'); ?></legend>
 		<?php
 			echo $this->Form->input('username', array('placeholder' => 'Username', 'label' => 'ユーザー名'));
 
