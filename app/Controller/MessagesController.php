@@ -66,7 +66,7 @@ class MessagesController extends AppController {
 	}
 
 	public function send($id = NULL ,$name=null) {
-		
+		//物件詳細から飛んだ場合に物件id取得
 		if (!empty($this->request->named['realestate_article_id'])) {
 			$realestate_article_id = $this->request->named['realestate_article_id'];
 			$this->set('test', $realestate_article_id);
